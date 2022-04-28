@@ -1,9 +1,9 @@
 {
-  "compilerOptions": {
-    "outDir": "./dist/js", // Recebe o caminho do diretório de saída
-    "target": "ES6",
-    "noEmitOnError": true, // Não permite a compilação de arquivos que contém erros
-    "noImplicitAny": true // Mudando para true para que o TypeScript não tente inferir o tipo de um parâmetro que não foi declarado
-  },
-  "include": ["app/**/*"] // Inclui todos os arquivos TS que estamos trabalhando
+    "compilerOptions": {
+        "outDir": "dist/js",
+        "target": "ES6",
+        "noEmitOnError": true,
+        "noImplicitAny": true
+    },
+    "include": ["app/**/*"]
 }
