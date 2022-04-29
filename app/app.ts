@@ -10,3 +10,12 @@ if (form) {
 } else {
   throw new Error("Formulário não encontrado");
 }
+
+const botaoImportar = document.querySelector("#botao-importa");
+if (botaoImportar) {
+  botaoImportar.addEventListener("click", () => {
+    controller.importarDados();
+  });
+} else {
+  throw new Error("Botão não encontrado");
+}
