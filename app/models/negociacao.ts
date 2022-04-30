@@ -1,4 +1,5 @@
-export class Negociacao {
+import { Objeto } from "../interfaces/objeto.js";
+export class Negociacao implements Objeto<Negociacao> {
   constructor(
     private _data: Date,
     public readonly quantidade: number,
@@ -14,6 +15,13 @@ export class Negociacao {
     return data;
   }
 
+  public paraTexto(): string {
+    return `
+      Data: ${this.data}
+      Quantidade: ${this.quantidade}
+      Valor: ${this.valor}`;
+  }
+
   public static criaDe(
     dataString: string,
     quantidadeString: string,
@@ -24,5 +32,13 @@ export class Negociacao {
     const quantidade = parseInt(quantidadeString);
     const valor = parseFloat(valorString);
     return new Negociacao(date, quantidade, valor);
+  }
+
+  public ehIgual(negociacao: Negociacao): boolean {
+    return (
+      this.data.getDate() == negociacao.data.getDate() &&
+      this.data.getMonth() == negociacao.data.getMonth() &&
+      this.data.getFullYear() == negociacao.data.getFullYear()
+    );
   }
 }
